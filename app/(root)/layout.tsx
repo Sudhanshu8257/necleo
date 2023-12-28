@@ -11,7 +11,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
         <section className="flex min-h-screen flex-1 flex-col">
           <Navbar />
-          <div className="p-12 pt-20 w-full">{children}</div>
+          <div className="p-12 pt-20 max-md:p-6 max-md:pt-24 w-full">
+            {children}
+          </div>
         </section>
       </div>
     </main>

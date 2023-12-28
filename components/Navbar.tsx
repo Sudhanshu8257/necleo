@@ -10,7 +10,7 @@ import { UserButton } from "@clerk/nextjs";
 const Navbar = () => {
   const pathName = usePathname();
   return (
-    <nav className=" bg-white fixed top-0 right-0 w-full h-14 gap-5 p-4 flex items-center justify-between">
+    <nav className=" bg-white fixed top-0 right-0 z-30 w-full h-14 gap-5 p-4 flex items-center justify-between">
       <Sheet>
         <SheetTrigger className="block md:hidden">
           <Menu />
@@ -42,7 +42,7 @@ const Navbar = () => {
                 );
               })}
             </div>
-            <div className="w-full h-[1px] bg-[#C4C4C4] ">
+            <div className="w-full h-[1px] bg-[#C4C4C4] rounded-md ">
               {/* SEPERATOR */}
             </div>
             <div className="w-full flex flex-col items-start p-3 gap-7">
@@ -105,7 +105,7 @@ const Navbar = () => {
 
       <div className="flex gap-3 items-center ml-auto justify-center">
         <div className="flex flex-col h-full items-start justify-center gap-0.5">
-          <div className="flex gap-3 items-center justify-center text-[12px]">
+          <div className="flex gap-3 items-center justify-center max-md:gap-1 text-[12px] max-md:text-[10px]">
             <span className="font-semibold">Free Trial</span>
             <span className="font-semibold">|</span>
             <span>2days left</span>

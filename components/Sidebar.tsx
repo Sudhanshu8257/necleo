@@ -10,7 +10,7 @@ const Sidebar = ({ collapsed, setCollapsed }: any) => {
   return (
     <div
       className={`${
-        collapsed ? "w-20 pt-6 " : "w-56"
+        collapsed ? "w-20 pt-6 " : "min-w-56"
       } h-screen sticky left-0 top-0 max-md:hidden py-4 px-4 gap-7 z-50 bg-white flex flex-col justify-start items-center`}
     >
       <Image src={"/assets/icons/logo.svg"} alt="logo" width={72} height={72} />
@@ -19,7 +19,9 @@ const Sidebar = ({ collapsed, setCollapsed }: any) => {
           collapsed && "items-center"
         } `}
       >
-        <div className="w-full h-[1px] bg-[#C4C4C4]">{/* SEPERATOR */}</div>
+        <div className="w-full h-[1px] bg-[#C4C4C4] rounded-md">
+          {/* SEPERATOR */}
+        </div>
         <div className={`w-full flex flex-col items-start p-3 gap-7`}>
           {primaryLinks?.map((link) => {
             const isActive = pathName === link.route;
@@ -34,8 +36,8 @@ const Sidebar = ({ collapsed, setCollapsed }: any) => {
                 <Image
                   src={link.icon}
                   alt={link.label}
-                  width={24}
-                  height={24}
+                  width={link.width}
+                  height={link.height}
                 />
                 {!collapsed && (
                   <span className="text-[14px]">{link.label}</span>
@@ -44,7 +46,9 @@ const Sidebar = ({ collapsed, setCollapsed }: any) => {
             );
           })}
         </div>
-        <div className="w-full h-[1px] bg-[#C4C4C4] ">{/* SEPERATOR */}</div>
+        <div className="w-full h-[1px] bg-[#C4C4C4] rounded-md ">
+          {/* SEPERATOR */}
+        </div>
         <div className="w-full flex flex-col items-start p-3 gap-7">
           {secondaryLinks?.map((link) => {
             const isActive = pathName === link.route;
@@ -59,8 +63,8 @@ const Sidebar = ({ collapsed, setCollapsed }: any) => {
                 <Image
                   src={link.icon}
                   alt={link.label}
-                  width={24}
-                  height={24}
+                  width={link.width}
+                  height={link.height}
                 />
                 {!collapsed && (
                   <span className="text-[14px]">{link.label}</span>
@@ -83,8 +87,8 @@ const Sidebar = ({ collapsed, setCollapsed }: any) => {
                 <Image
                   src={link.icon}
                   alt={link.label}
-                  width={24}
-                  height={24}
+                  width={link.width}
+                  height={link.height}
                 />
                 {!collapsed && (
                   <span className="text-[14px]">{link.label}</span>
