@@ -10,13 +10,17 @@ const ProjectDetails = ({ project }: any) => {
           width={200}
           height={200}
           alt={"project"}
-          className="rounded-lg object-contain"
+          className="rounded-lg object-contain max-h-[200px]"
         />
       </div>
-      <span className="font-bold text-[24px] capitalize">{project.title}</span>
-      <span className="font-medium text-[16px] capitalize text-gray-400">
-        {project.description}
-      </span>
+      <div className="flex flex-col justify-center items-start w-full">
+        <span className="font-bold text-[24px] mt-4 capitalize">
+          {project.title}
+        </span>
+        <span className="font-medium text-[16px] capitalize text-gray-400">
+          {project.description}
+        </span>
+      </div>
     </div>
   );
 };

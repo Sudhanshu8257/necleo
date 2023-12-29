@@ -19,7 +19,7 @@ const ProjectCard = ({ project }: any) => {
       <Dialog>
         <DialogTrigger>
           <div className="flex flex-col min-w-[220px] max-md:w-[150px] max-md:max-w-[150px] items-center justify-center gap-2 px-3 py-2 text-black font-semibold ">
-            <div className="w-full h-[150px] max-h-[150px] flex justify-center items-center">
+            <div className="w-full h-[150px] overflow-hidden rounded-lg max-h-[150px] flex justify-center items-center">
               <Image
                 src={project.imageUrl}
                 width={150}
@@ -36,7 +36,7 @@ const ProjectCard = ({ project }: any) => {
           <ProjectDetails project={project} />
         </DialogContent>
       </Dialog>
-      <div className="absolute hidden group-hover:flex top-3 right-2 gap-2 flex-col items-center justify-center">
+      <div className="absolute hidden group-hover:flex max-md:flex top-3 right-2 gap-2 flex-col items-center justify-center">
         <DeleteDialog project={project} />
         <UpdateDialog userId={userId} project={project} />
       </div>
